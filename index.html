@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idle Tribal Game</title>
+    <!--
+      A simple idle village management game inspired by Tribal Wars, Kingshot and
+      Clash of Clans. Players collect resources, build and upgrade structures
+      and watch their village grow over time. All logic is handled in
+      script.js and data is persisted using localStorage so progress is
+      preserved between sessions.
+    -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <header id="resource-bar">
+        <!-- Resource counts are populated by script.js -->
+      </header>
+      <main id="main-content">
+        <section id="buildings-section">
+          <h2>Your Buildings</h2>
+          <div id="buildings-list"></div>
+        </section>
+        <section id="construction-section">
+          <h2>Construct New Building</h2>
+          <div id="construction-options"></div>
+          <div id="queue-container"></div>
+        </section>
+
+        <!-- New Troops and Raids section. This area allows players to train troops and send them on raids for additional resources. -->
+        <section id="troops-section">
+          <h2>Troops &amp; Raids</h2>
+          <!-- Displays current troop count and training progress -->
+          <div id="troops-info"></div>
+          <!-- Training queue display -->
+          <div id="training-container"></div>
+          <!-- Raid queue display -->
+          <div id="raid-container"></div>
+        </section>
+      </main>
+      <footer>
+        <p>
+          Idle Tribal Game &copy; 2025. Inspired by classic strategy games
+          Tribal Wars, Kingshot and Clash of Clans. Resources generate
+          automatically and progress is saved locally.
+        </p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

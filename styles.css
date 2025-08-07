@@ -1,0 +1,213 @@
+/*
+  Global styles for the Idle Tribal Game.
+
+  The design aims for a clean, modern look appropriate for mobile devices.
+  CSS variables control the main colours so it is easy to tweak the palette.
+*/
+
+:root {
+  --bg-gradient-start: #2f3542;
+  --bg-gradient-end: #57606f;
+  --panel-bg: rgba(255, 255, 255, 0.1);
+  --panel-border: rgba(255, 255, 255, 0.2);
+  --text-colour: #ffffff;
+  --accent-colour: #ffa502;
+  --button-bg: #3742fa;
+  --button-hover-bg: #5352ed;
+  --button-disabled-bg: #57606f;
+  --button-text: #ffffff;
+  --card-radius: 8px;
+  --spacing: 1rem;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-family);
+  color: var(--text-colour);
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  overflow-x: hidden;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--spacing);
+}
+
+header#resource-bar {
+  display: flex;
+  justify-content: space-around;
+  padding: var(--spacing);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--card-radius);
+  margin-bottom: var(--spacing);
+  backdrop-filter: blur(4px);
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.resource-item img {
+  width: 24px;
+  height: 24px;
+}
+
+#main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+section {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--card-radius);
+  padding: var(--spacing);
+  backdrop-filter: blur(6px);
+}
+
+section h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--accent-colour);
+}
+
+#buildings-list,
+#construction-options,
+#queue-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.building-card,
+.construction-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--card-radius);
+  padding: 0.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.building-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.building-actions button,
+.construction-card button {
+  padding: 0.5rem 1rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: var(--card-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.building-actions button:hover,
+.construction-card button:hover {
+  background: var(--button-hover-bg);
+}
+
+.building-actions button:disabled,
+.construction-card button:disabled {
+  background: var(--button-disabled-bg);
+  cursor: default;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 0.3rem;
+}
+
+.progress-bar div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--accent-colour);
+  transition: width 0.2s linear;
+}
+
+/* Troops & Raids section styles */
+#troops-section > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+/* Cards used in the troops and raids section share styling with other cards */
+.troop-card,
+.raid-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--card-radius);
+  padding: 0.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.troop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.troop-actions button,
+.raid-actions button {
+  padding: 0.5rem 1rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: var(--card-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.troop-actions button:hover,
+.raid-actions button:hover {
+  background: var(--button-hover-bg);
+}
+
+.troop-actions button:disabled,
+.raid-actions button:disabled {
+  background: var(--button-disabled-bg);
+  cursor: default;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
